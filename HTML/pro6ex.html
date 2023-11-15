@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Application Form</title>
+</head>
+<button onclick="validate()">please fll following details.</button>
+<body>
+<center>
+<h1>Application form</h1>
+</center>
+<form>
+<img src="avatar.png"width"70" height=70" alt="photo">
+<br>
+<br>  
+ Firstname:         
+<input type="text" name="firstname">
+<br>
+<br>
+Lastname:     
+<input type="text" name="lastname">
+<br>
+<br> 
+Email:
+<input type="text" name="email">
+<br>
+<br>
+Date of Birth:
+<input type="date" id="DOB" name="DOB">  
+<br>
+<br>
+Address: 
+<br>
+<textarea cols="80" rows="5" value="address">  
+</textarea>
+<br>
+<br>
+Gender: 
+<br>  
+<input type="radio" name="gender" value="male"> Male
+<input type="radio" name="gender" value="female"> Female
+<input type="radio" name="gender" value="Others"> Others
+<br> 
+<br>   
+Course:
+<br>
+<select>
+<option value="MCA">MCA</option>
+<option value="MBA">MBA</option>
+<option value="M.Tech">M.Tech</option>
+</select>
+<br>  
+<br> 
+phone number:     
+<input type="phone" name="phonenumber">
+<br>
+<br>
+Programming Skills:
+<br> 
+<input type="checkbox" id="C" name="C" value="C">    
+<label>C</label><br>    
+<input type="checkbox" id="Java" name="Java" value="Java">
+<label>Java</label> <br>    
+<input type="checkbox" id="Python" name="Python" value="Python">    
+<label>Python</label> <br>  
+<input type="checkbox" id="PHP" name="PHP" value="PHP">    
+<label>PHP</label>
+<br>
+<br>
+<button onclick="validate()" type ="register">submit</button>
+<button type="button" onclick="alert ("cancel")>Cancel</button>
+</form>  
+<script src="./message.js></script>
+</body>  
+</html>
