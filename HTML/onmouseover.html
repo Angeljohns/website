@@ -1,0 +1,22 @@
+<html>
+<body>
+<center>
+<h1>HTML EVENT</h1>
+<img onmouseover="bigimg(this)" onmouse="normalimg(this)" border="0" src="smiley.jpg" alt="smiley width="32" height="32">
+<p>The function bigimg() is triggered when the user moves the mouse pointer over the image</p>
+<p>The function normalimg() is triggered when the user moves the mouse pointer is moved out of the image</p>
+<script>
+function bigimg(x)
+{
+x.style.height="150px";
+x.style.width="150px";
+}
+function normalimg(x)
+{
+x.style.height="32px";
+x.style.width="32px";
+}
+</script>
+</center>
+</body>
+</html>

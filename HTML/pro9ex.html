@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+
+    <div id="question-container">
+        <h1>Online Exam</h1>
+        <div id="question"></div>
+        <div id="options"></div>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the capital of France?",
+                options: ["Paris", "Berlin", "Madrid", "Rome"],
+                correctAnswer: "Paris"
+            },
+            {
+                question: "Which programming language is this example written in?",
+                options: ["Java", "JavaScript", "Python", "C++"],
+                correctAnswer: "JavaScript"
+            },
+            // Add more questions as needed
+        ];
+
+        let currentQuestion = 0;
+
+        function loadQuestion() {
+            const questionContainer = document.getElementById("question-container");
+            const questionElem = document.getElementById("question");
+            const optionsElem = document.getElementById("options");
+
+            const currentQ = questions[currentQuestion];
+
+            questionElem.textContent = currentQ.question;
+
+            optionsElem.innerHTML = "";
+            currentQ.options.forEach((option, index) => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.addEventListener("click", () => checkAnswer(option));
+                optionsElem.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedOption) {
+            const currentQ = questions[currentQuestion];
+            if (selectedOption === currentQ.correctAnswer) {
+                alert("Correct!");
+            } else {
+                alert("Incorrect. The correct answer is: " + currentQ.correctAnswer);
+            }
+
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                alert("End of the exam. Thank you!");
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                alert("End of the exam. Thank you!");
+            }
+        }
+
+        // Initial load
+        loadQuestion();
+    </script>
+
+</body>
+</html>

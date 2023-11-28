@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+int a[10],front=-1,rear=1,n;
+void insert()
+{
+int x;
+if((front==0&&rear==n-1)||(front==rear+1))
+{
+printf("queue is full");
+}
+else
+{
+printf("enter the element to insert:");
+scanf("%d,$x);
+if((front==-1&&rear==-1)
+front=rear=0;
+else if (rear==n-1&&front!=0)
+rear

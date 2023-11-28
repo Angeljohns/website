@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Online Exam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .exam-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Online Exam</h1>
+
+    <!-- Registration Form -->
+    <form id="registrationForm" onsubmit="submitRegistration(); return false;">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <!-- Exam Form -->
+    <form id="examForm" class="exam-form">
+        <fieldset>
+            <legend>Question 1</legend>
+            <p>What is the capital of France?</p>
+            <label>
+                <input type="radio" name="q1" value="paris"> Paris
+            </label>
+            <label>
+                <input type="radio" name="q1" value="london"> London
+            </label>
+            <label>
+                <input type="radio" name="q1" value="berlin"> Berlin
+            </label>
+            <label>
+                <input type="radio" name="q1" value="madrid"> Madrid
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Question 2</legend>
+            <p>What is 2 + 2?</p>
+            <label>
+                <input type="radio" name="q2" value="3"> 3
+            </label>
+            <label>
+                <input type="radio" name="q2" value="4"> 4
+            </label>
+            <label>
+                <input type="radio" name="q2" value="5"> 5
+            </label>
+            <label>
+                <input type="radio" name="q2" value="6"> 6
+            </label>
+        </fieldset>
+
+        <button type="button" onclick="submitExam()">Submit Exam</button>
+    </form>
+
+    <script>
+        function submitRegistration() {
+            // You can handle registration logic here
+            // For simplicity, let's just show the exam form
+            document.getElementById('registrationForm').style.display = 'none';
+            document.getElementById('examForm').style.display = 'block';
+        }
+
+        function submitExam() {
+            // You can implement scoring and evaluation logic here
+            // For simplicity, let's just display an alert for now
+            alert('Exam submitted!');
+        }
+    </script>
+</body>
+</html>

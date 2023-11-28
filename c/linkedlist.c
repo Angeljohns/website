@@ -1,14 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
- 
-// Linked List Node
 struct node {
     int info;
     struct node* link;
 };
 struct node* start = NULL;
- 
-// Function to create list with n nodes initially
 void createList()
 {
     if (start == NULL) {
@@ -42,28 +38,19 @@ void createList()
     else
         printf("\nThe list is already created\n");
 }
- 
-// Function to traverse the linked list
 void traverse()
 {
     struct node* temp;
- 
-    // List is empty
     if (start == NULL)
         printf("\nList is empty\n");
- 
-    // Else print the LL
     else {
         temp = start;
         while (temp != NULL) {
-            printf("Data = %d\n", temp->info);
+            printf("%d\n", temp->info);
             temp = temp->link;
         }
     }
 }
- 
-// Function to insert at the front
-// of the linked list
 void insertAtFront()
 {
     int data;
@@ -73,27 +60,17 @@ void insertAtFront()
         " be inserted : ");
     scanf("%d", &data);
     temp->info = data;
- 
-    // Pointer of temp will be
-    // assigned to start
     temp->link = start;
     start = temp;
 }
- 
-// Function to insert at the end of
-// the linked list
 void insertAtEnd()
 {
     int data;
     struct node *temp, *head;
     temp = malloc(sizeof(struct node));
- 
-    // Enter the number
     printf("\nEnter number to"
         " be inserted : ");
     scanf("%d", &data);
- 
-    // Changes links
     temp->link = 0;
     temp->info = data;
     head = start;
@@ -102,20 +79,13 @@ void insertAtEnd()
     }
     head->link = temp;
 }
- 
-// Function to insert at any specified
-// position in the linked list
 void insertAtPosition()
 {
     struct node *temp, *newnode;
     int pos, data, i = 1;
     newnode = malloc(sizeof(struct node));
- 
-    // Enter the position and data
     printf("\nEnter position and data :");
     scanf("%d %d", &pos, &data);
- 
-    // Change Links
     temp = start;
     newnode->info = data;
     newnode->link = 0;
@@ -126,9 +96,6 @@ void insertAtPosition()
     newnode->link = temp->link;
     temp->link = newnode;
 }
- 
-// Function to delete from the front
-// of the linked list
 void deleteFirst()
 {
     struct node* temp;
@@ -140,12 +107,10 @@ void deleteFirst()
         free(temp);
     }
 }
- 
-// Function to delete from the end
-// of the linked list
 void deleteEnd()
 {
     struct node *temp, *prevnode;
+    printf("\nElement is deleted");
     if (start == NULL)
         printf("\nList is Empty\n");
     else {
@@ -158,19 +123,12 @@ void deleteEnd()
         prevnode->link = 0;
     }
 }
- 
-// Function to delete from any specified
-// position from the linked list
 void deletePosition()
 {
     struct node *temp, *position;
     int i = 1, pos;
- 
-    // If LL is empty
     if (start == NULL)
         printf("\nList is empty\n");
- 
-    // Otherwise
     else {
         printf("\nEnter index : ");                                                                                                                                             
         scanf("%d", &pos);
@@ -237,7 +195,7 @@ int main()
             "element at any position\n");
         printf("\t8 Search an element in linked list\n");
         printf("\t9 To exit\n");
-        printf("\nEnter Choice :\n");
+        printf("\nEnter Choice :");
         scanf("%d", &choice);
         switch (choice) 
         {
