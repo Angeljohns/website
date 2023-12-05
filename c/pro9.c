@@ -108,7 +108,6 @@ printf("Element not found");
 int main() 
 {
 char ch;
-
 printf("Enter the size of the queue : ");
 scanf("%d",&n);
 while(1) 
@@ -132,7 +131,6 @@ case '4':display();
 break;
 case '5':printf("\nPress any key to exit..");
 return 0;
-
 break;
 default:printf("\nInvalid choice");
 }
